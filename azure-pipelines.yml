@@ -7,9 +7,11 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 steps:
+- script: echo "Running on a self-hosted agent in the 'Default' pool"
+  displayName: "Self-hosted agent test"
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
